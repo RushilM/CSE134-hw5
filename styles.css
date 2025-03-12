@@ -1,0 +1,716 @@
+/* CSS Variables with Fallbacks */
+:root {
+    --primary-color: color-mix(in srgb, blue 70%, white);
+    --secondary-color: color(display-p3 0.2 0.6 0.8);
+    --text-color: #222;
+    --background-color: #f5f5f5;
+    --font-size: 1rem;
+    --header-font: 'Poppins', sans-serif;
+}
+/* Background Image */
+body {
+    background-image: url('assets/media/CSbackground.jpg'); /* Adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #222; /* Default text color */
+}
+
+/* Content Wrapper: White Box for Readability */
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Header & Footer: Ensure Readability */
+header, footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* Navigation Link Colors */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Intro Section Inside Wrapper */
+.intro {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Citation Styling */
+.image-credit {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #555;
+}
+
+
+/* Overlay for better readability */
+.intro {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Ensure header and footer remain readable */
+header, footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Link Styling */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Citation styling */
+.image-credit {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--header-font, Arial), sans-serif;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color, blue);
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--secondary-color, cyan);
+}
+
+/* Fix navigation spacing for small screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro {
+        max-width: 90%;
+    }
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80dvh; /* Ensures full viewport height */
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Responsive Grid Layout - Fix Alignment */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+    margin-bottom: 30px;
+}
+
+/* Fix Image Sizes and Alignment */
+.intro figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.intro img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Fix List Display */
+.intro ul {
+    list-style-type: disc;
+    text-align: left;
+    padding-left: 20px;
+    max-width: 600px;
+}
+
+/* Fix Hiking Image Alignment */
+.intro picture {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.intro picture img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* CSS Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Advanced Selector - has() */
+nav li:has(a:hover) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* Optimize Profile Picture */
+.intro figure img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Ensure Hiking Image Fits Properly */
+.intro picture img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+/* Responsive Image Handling */
+@media (max-width: 768px) {
+    .intro picture img {
+        max-width: 400px;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: var(--header-font, Arial), sans-serif;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header - Desktop Default */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color, blue);
+    color: white;
+}
+
+/* NAVIGATION - Default for Desktops */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--secondary-color, cyan);
+}
+
+/* RESPONSIVE NAVIGATION - Hamburger Menu for Mobile */
+.nav-toggle {
+    display: none; /* Hidden on larger screens */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    nav ul.show {
+        display: flex; /* Show when toggled */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80dvh;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Responsive Grid Layout */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+    margin-bottom: 30px;
+}
+
+/* IMAGE RESPONSIVENESS */
+.intro picture img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE STYLING FOR DIFFERENT DEVICES */
+
+/* Phones (Max: 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .intro {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .intro picture img {
+        max-width: 350px;
+    }
+}
+
+/* Tablets & Small Laptops (Max: 1024px) */
+@media (max-width: 1024px) {
+    .intro {
+        max-width: 90%;
+    }
+
+    .intro picture img {
+        max-width: 500px;
+    }
+}
+
+/* Large Screens (Min: 1025px) */
+@media (min-width: 1025px) {
+    .intro {
+        max-width: 800px;
+    }
+}
+
+/* Hide checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Style hamburger menu */
+.nav-toggle-label {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block; /* Show hamburger menu */
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        z-index: 10;
+    }
+
+    nav ul li {
+        padding: 1rem 0;
+    }
+
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked + .nav-toggle-label + nav ul {
+        display: flex;
+    }
+}
+/* =============================== */
+/*         CONTACT FORM STYLES     */
+/* =============================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    padding: 10px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Labels & Inputs */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Button */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Output elements for error and info messages */
+output {
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+}
+
+/* Info Message */
+#info-message {
+    color: green;
+}
+
+/* =============================== */
+/*  RESPONSIVE CONTACT FORM LAYOUT */
+/* =============================== */
+@media (max-width: 768px) {
+    form {
+        max-width: 90%;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+    }
+}
+/* Default Theme (Light Mode) */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #222;
+    --primary-color: #007bff;
+    --button-bg: #fff;
+    --button-text: #222;
+}
+
+/* Default Light Mode */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #222;
+    --primary-color: #007bff;
+    --button-bg: #fff;
+    --button-text: #222;
+}
+
+/* Dark Mode */
+/* Default Light Mode */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #222;
+    --primary-color: #007bff;
+    --button-bg: #fff;
+    --button-text: #222;
+}
+
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #222;
+    --primary-color: #007bff;
+    --button-bg: #fff;
+    --button-text: #222;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #1e90ff;
+    --button-bg: #333;
+    --button-text: #f5f5f5;
+}
+
+/* Apply Theme */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Header & Footer Fixes */
+[data-theme="dark"] header, 
+[data-theme="dark"] footer {
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+
+/* Ensure All Text Inside is White */
+[data-theme="dark"] .content-wrapper h1, 
+[data-theme="dark"] .content-wrapper h2, 
+[data-theme="dark"] .content-wrapper h3, 
+[data-theme="dark"] .content-wrapper p, 
+[data-theme="dark"] .content-wrapper figcaption, 
+[data-theme="dark"] .content-wrapper table {
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* Navigation Links */
+[data-theme="dark"] nav a {
+    color: #f5f5f5;
+}
+
+[data-theme="dark"] nav a:hover {
+    color: #fff;
+}
+
+/* Buttons */
+#theme-toggle {c
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 6px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+/* Apply Dark Mode to All Content Boxes (Fix for About Me & Contact Me) */
+[data-theme="dark"] .content-wrapper,
+[data-theme="dark"] .intro {
+    background-color: #000 !important;  /* Fully black */
+    color: #ffffff !important;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure All Text Inside is White */
+[data-theme="dark"] .content-wrapper h1, 
+[data-theme="dark"] .content-wrapper h2, 
+[data-theme="dark"] .content-wrapper h3, 
+[data-theme="dark"] .content-wrapper p, 
+[data-theme="dark"] .content-wrapper figcaption, 
+[data-theme="dark"] .content-wrapper table,
+[data-theme="dark"] .intro h1, 
+[data-theme="dark"] .intro h2, 
+[data-theme="dark"] .intro h3, 
+[data-theme="dark"] .intro p, 
+[data-theme="dark"] .intro figcaption, 
+[data-theme="dark"] .intro table {
+    color: #ffffff !important;
+}
+
+/* Fix Forms and Inputs in Dark Mode */
+[data-theme="dark"] input, 
+[data-theme="dark"] textarea {
+    background-color: #222 !important;  /* Darker input fields */
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+/* Improve Placeholder Contrast */
+[data-theme="dark"] input::placeholder, 
+[data-theme="dark"] textarea::placeholder {
+    color: #bbb !important;
+}
+
+/* Fix for List Items */
+[data-theme="dark"] .intro ul {
+    background-color: transparent;
+    color: #ffffff !important;
+}
