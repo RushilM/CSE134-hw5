@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Rushil's Portfolio</title>
+    <meta name="description" content="Rushil's technical skills in software development, machine learning, and cloud computing.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .highlight { color: blue; font-weight: bold; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Skills</h1>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">🌞</button>
+        </div>
+        
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="content-wrapper">
+            <aside>
+                <h3>Quick Navigation</h3>
+                <p><a href="#languages">Languages</a> | <a href="#ml">Machine Learning</a> | <a href="#cloud">Cloud Computing</a></p>
+            </aside>
+
+            <section class="skills-container">
+                <div>
+                    <h2>Technical Skills</h2>
+
+                    <h3 id="languages">Programming Languages</h3>
+                    <p><span class="highlight">Python</span>, C++, Java, SQL, JavaScript, HTML, CSS, Bash, TypeScript</p>
+
+                    <h3 id="ml">Machine Learning & AI</h3>
+                    <p>TensorFlow, PyTorch, Scikit-learn, Keras</p>
+                    <p><em>Specializations:</em> NLP, Computer Vision, Hugging Face Transformers</p>
+
+                    <h3>Data Analysis & Visualization</h3>
+                    <p>Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI</p>
+
+                    <h3 id="cloud">Cloud Computing & DevOps</h3>
+                    <p>AWS (SageMaker, Lambda, EC2, S3), Azure, Google Cloud</p>
+                    <p>Docker, Kubernetes</p>
+
+                    <h3>Version Control & Collaboration</h3>
+                    <p>Git, GitHub, GitLab, Bitbucket</p>
+                    <p>Scrum, Agile Development</p>
+
+                    <h3>Debugging & Testing</h3>
+                    <p>GDB, PyTest, Valgrind, PDB, Selenium</p>
+
+                    <h3>Parallel Programming</h3>
+                    <p>OpenCL, CUDA</p>
+
+                    <h3>Select one of my skills</h3>
+                    <form>
+                        <label for="skills">Choose a skill category:</label>
+                        <select id="skills" name="skills">
+                            <optgroup label="Programming">
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                            </optgroup>
+                            <optgroup label="Cloud & DevOps">
+                                <option value="aws">AWS</option>
+                                <option value="docker">Docker</option>
+                            </optgroup>
+                        </select>
+
+                        <h4>Suggested Skills you are looking for</h4>
+                        <label for="resources">Select a Skill:</label>
+                        <input list="resources" name="resource">
+                        <datalist id="resources">
+                            <option value="TensorFlow"></option>
+                            <option value="PyTorch"></option>
+                            <option value="Docker"></option>
+                            <option value="Kubernetes"></option>
+                        </datalist>
+                    </form>
+                </div>
+            </section>
+
+            <template id="skill-template">
+                <div>
+                    <h4>New Skill</h4>
+                    <p>Placeholder for additional skills.</p>
+                </div>
+            </template>
+
+            <h3>Search Skills</h3>
+            <search>
+                <label for="search-skills">Find a skill:</label>
+                <input type="text" id="search-skills" name="search-skills" placeholder="Type a skill...">
+                <button type="submit">Search</button>
+            </search>
+
+            <h3>Keyboard Shortcuts</h3>
+            <p>Use the following shortcuts to navigate:</p>
+            <p><kbd>Ctrl</kbd> + <kbd>F</kbd> → Search for skills</p>
+            <p><kbd>Ctrl</kbd> + <kbd>P</kbd> → Print the page</p>
+            <p><kbd>Alt</kbd> + <kbd>←</kbd> → Go back</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rushil</p>
+        <address>
+            Contact: <a href="mailto:rushilm8@gmail.com">rushilm8@gmail.com</a>
+        </address>
+    </footer>
+
+    <script src="theme-toggle.js"></script>
+</body>
+</html>

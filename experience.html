@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Rushil's Portfolio</title>
+    <meta name="description" content="Rushil's professional experience in software engineering and internships.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Experience</h1>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">🌞</button>
+        </div>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Wrap content for better readability -->
+        <div class="content-wrapper">
+            <section>
+                <h2>Professional Experience</h2>
+
+                <details>
+                    <summary><b>Software Engineer - Dermose</b> <i>(Sept 2024 - Present)</i></summary>
+                    <p>Designed scalable APIs for processing image data via <code>POST</code> requests.</p>
+                    <p>Implemented prediction models with Detectron2 for <strong>hair analysis</strong> tasks.</p>
+                    <p>Developed <abbr title="Application Programming Interface">API</abbr> documentation.</p>
+                    <p><ins>Optimized calibration for precise hair width measurements.</ins></p>
+                </details>
+
+                <details>
+                    <summary><b>Software Engineering Intern - Worksters Inc</b> <i>(June 2024 - Sept 2024)</i></summary>
+                    <p>Developed a <del>employee <ins>staff</ins> portal to manage hours worked and PTO.</p>
+                    <p>Deployed and managed the internal portal on <dfn title="Microsoft Azure">Azure Cloud</dfn>.</p>
+                    <p>Worked closely with IT security providers.</p>
+                </details>
+
+                <hr>
+
+                <h3>Technical Methods</h3>
+                <dl>
+                    <dt><strong>Programming Languages:</strong></dt>
+                    <dd>Python, C++, JavaScript</dd>
+                    <dt><strong>Cloud Technologies:</strong></dt>
+                    <dd>AWS, Azure, Google Cloud</dd>
+                </dl>
+
+                <h3>A quote or <del>two</del></h3>
+                <blockquote cite="https://www.example.com">
+                    "Great software comes from strong problem-solving and collaboration."
+                </blockquote>
+
+                <h3>Technical Quote</h3>
+                <pre>
+while (success) {
+    keepLearning();
+}
+                </pre>
+
+                <form action="https://formspree.io/f/{your_form_id}" method="POST">
+                    <fieldset>
+                        <legend>Send me a quote</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="Quote">Message:</label>
+                        <textarea id="Quote" name="Quote" rows="4"></textarea><br>
+                        <button type="submit">Inspire Me!</button>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <hgroup>
+            <h4>Contact Me</h4>
+            <p>Email: <a href="mailto:rushilm8@gmail.com">rushilm8@gmail.com</a></p>
+        </hgroup>
+        <address>
+            <cite>Rushil's Portfolio</cite> - Built for software engineers and recruiters.
+        </address>
+        <dialog open>
+            Welcome to Rushil's Experience Page!
+        </dialog>
+        <noscript>
+            JavaScript is required for full site functionality.
+        </noscript>
+        <p>&copy; 2025 Rushil</p>
+    </footer>
+
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
