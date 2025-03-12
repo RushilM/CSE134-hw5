@@ -29,10 +29,18 @@
     </header>
     
     <main>
-        <!-- Wrap content for better readability -->
         <div class="content-wrapper">
             <section>
                 <h2>Professional Experience</h2>
+
+                <!-- Dynamic Cards Container -->
+                <div id="experience-cards-container" class="card-container">
+                    <!-- Project cards will be dynamically inserted here -->
+                </div>
+
+                <hr>
+
+                <h3>Past Experience</h3>
 
                 <details>
                     <summary><b>Software Engineer - Dermose</b> <i>(Sept 2024 - Present)</i></summary>
@@ -44,14 +52,14 @@
 
                 <details>
                     <summary><b>Software Engineering Intern - Worksters Inc</b> <i>(June 2024 - Sept 2024)</i></summary>
-                    <p>Developed a <del>employee <ins>staff</ins> portal to manage hours worked and PTO.</p>
+                    <p>Developed a <del>employee</del> <ins>staff</ins> portal to manage hours worked and PTO.</p>
                     <p>Deployed and managed the internal portal on <dfn title="Microsoft Azure">Azure Cloud</dfn>.</p>
                     <p>Worked closely with IT security providers.</p>
                 </details>
 
                 <hr>
 
-                <h3>Technical Methods</h3>
+                <h3>Technical Skills</h3>
                 <dl>
                     <dt><strong>Programming Languages:</strong></dt>
                     <dd>Python, C++, JavaScript</dd>
@@ -59,12 +67,12 @@
                     <dd>AWS, Azure, Google Cloud</dd>
                 </dl>
 
-                <h3>A quote or <del>two</del></h3>
+                <h3>Inspirational Quote</h3>
                 <blockquote cite="https://www.example.com">
                     "Great software comes from strong problem-solving and collaboration."
                 </blockquote>
 
-                <h3>Technical Quote</h3>
+                <h3>Code Philosophy</h3>
                 <pre>
 while (success) {
     keepLearning();
@@ -76,8 +84,8 @@ while (success) {
                         <legend>Send me a quote</legend>
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required><br>
-                        <label for="Quote">Message:</label>
-                        <textarea id="Quote" name="Quote" rows="4"></textarea><br>
+                        <label for="quote">Message:</label>
+                        <textarea id="quote" name="quote" rows="4"></textarea><br>
                         <button type="submit">Inspire Me!</button>
                     </fieldset>
                 </form>
@@ -103,5 +111,6 @@ while (success) {
     </footer>
 
     <script src="theme-toggle.js"></script>
+    <script src="project-card.js"></script> <!-- Ensure this script is included -->
 </body>
 </html>

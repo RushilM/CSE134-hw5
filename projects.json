@@ -1,0 +1,16 @@
+[
+    {
+        "title": "AI Image Processing",
+        "image": "assets/media/ai-project.jpg",
+        "alt": "AI Image Processing Project",
+        "description": "Developed a deep learning model for AI-driven image processing.",
+        "link": "https://github.com/rushil/ai-image-processing"
+    },
+    {
+        "title": "Cloud DevOps Dashboard",
+        "image": "assets/media/devops-dashboard.jpg",
+        "alt": "Cloud DevOps Project",
+        "description": "Built a cloud-based DevOps monitoring dashboard.",
+        "link": "https://github.com/rushil/cloud-devops-dashboard"
+    }
+]

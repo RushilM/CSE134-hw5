@@ -714,3 +714,16 @@ body {
     background-color: transparent;
     color: #ffffff !important;
 }
+/* Project Cards Layout */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Custom Element Styling */
+project-card {
+    display: block;
+}
