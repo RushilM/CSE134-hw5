@@ -1,16 +1,34 @@
 [
     {
-        "title": "AI Image Processing",
-        "image": "assets/media/ai-project.jpg",
-        "alt": "AI Image Processing Project",
-        "description": "Developed a deep learning model for AI-driven image processing.",
-        "link": "https://github.com/rushil/ai-image-processing"
+        "title": "Software Engineer",
+        "company": "Dermose",
+        "image": "assets/media/dermose-logo.jpeg",
+        "alt": "Dermose Company Logo",
+        "description": "Designed scalable APIs for processing image data, deployed efficiently in Docker containers.",
+        "link": "https://www.dermose.com"
     },
     {
-        "title": "Cloud DevOps Dashboard",
-        "image": "assets/media/devops-dashboard.jpg",
-        "alt": "Cloud DevOps Project",
-        "description": "Built a cloud-based DevOps monitoring dashboard.",
-        "link": "https://github.com/rushil/cloud-devops-dashboard"
+        "title": "Software Engineering Intern",
+        "company": "Worksters Inc",
+        "image": "assets/media/worksters-logo.jpeg",
+        "alt": "Worksters Inc Logo",
+        "description": "Developed a staff portal to manage hours worked and PTO. Deployed the portal on Azure Cloud.",
+        "link": "https://www.worksters.com"
+    },
+    {
+        "title": "Software Engineering Intern",
+        "company": "ISE Labs",
+        "image": "assets/media/iselabs-logo.jpeg",
+        "alt": "ISE Labs Logo",
+        "description": "Collaborated with engineers from top-tier semiconductor companies, troubleshooting software and testing equipment to ensure accurate results.",
+        "link": "https://www.iselabs.com"
+    },
+    {
+        "title": "Software Development Research Intern",
+        "company": "Anderson Graduate School of Management",
+        "image": "assets/media/anderson-logo.png",
+        "alt": "Anderson Graduate School of Management Logo",
+        "description": "Developed a Python program to process large volumes of financial data for all S&P 1500 companies, ensuring accurate data collection and analysis.",
+        "link": "https://business.ucr.edu"
     }
 ]

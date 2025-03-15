@@ -716,14 +716,18 @@ body {
 }
 /* Project Cards Layout */
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* Centers cards horizontally */
+    align-items: center;  /* Centers cards vertically if needed */
+    gap: 1.5rem;  /* Adds space between cards */
+    padding: 2rem 0;
 }
 
-/* Custom Element Styling */
+/* Ensure each card has a consistent size */
 project-card {
-    display: block;
+    display: flex;
+    justify-content: center;
+    width: 300px; /* Set a fixed width */
+    max-width: 100%;
 }

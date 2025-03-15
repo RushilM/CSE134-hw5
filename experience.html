@@ -13,7 +13,7 @@
             <h1>Experience</h1>
             <button id="theme-toggle" aria-label="Toggle light/dark mode">🌞</button>
         </div>
-
+        
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
         <nav>
@@ -32,32 +32,16 @@
         <div class="content-wrapper">
             <section>
                 <h2>Professional Experience</h2>
-
-                <!-- Dynamic Cards Container -->
-                <div id="experience-cards-container" class="card-container">
-                    <!-- Project cards will be dynamically inserted here -->
+                <div class="button-container">
+                    <button id="load-local">Load Local</button>
+                    <button id="load-remote">Load Remote</button>
                 </div>
 
-                <hr>
 
-                <h3>Past Experience</h3>
-
-                <details>
-                    <summary><b>Software Engineer - Dermose</b> <i>(Sept 2024 - Present)</i></summary>
-                    <p>Designed scalable APIs for processing image data via <code>POST</code> requests.</p>
-                    <p>Implemented prediction models with Detectron2 for <strong>hair analysis</strong> tasks.</p>
-                    <p>Developed <abbr title="Application Programming Interface">API</abbr> documentation.</p>
-                    <p><ins>Optimized calibration for precise hair width measurements.</ins></p>
-                </details>
-
-                <details>
-                    <summary><b>Software Engineering Intern - Worksters Inc</b> <i>(June 2024 - Sept 2024)</i></summary>
-                    <p>Developed a <del>employee</del> <ins>staff</ins> portal to manage hours worked and PTO.</p>
-                    <p>Deployed and managed the internal portal on <dfn title="Microsoft Azure">Azure Cloud</dfn>.</p>
-                    <p>Worked closely with IT security providers.</p>
-                </details>
-
-                <hr>
+                
+                <div id="projects-cards-container" class="card-container">
+                    <!-- Project cards will be dynamically inserted here -->
+                </div>
 
                 <h3>Technical Skills</h3>
                 <dl>
@@ -111,6 +95,7 @@ while (success) {
     </footer>
 
     <script src="theme-toggle.js"></script>
-    <script src="project-card.js"></script> <!-- Ensure this script is included -->
+    <script src="project-card.js"></script> 
+    <script src="projects.js"></script> <!-- Ensure this script is included -->
 </body>
 </html>
