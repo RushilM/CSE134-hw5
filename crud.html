@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD - Rushil's Portfolio</title>
+  <meta name="description" content="Perform CRUD actions on data stored in JSONBin.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Inline CSS for CRUD page styling */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      background-color: var(--background-color, #f5f5f5);
+      color: var(--text-color, #222);
+    }
+    .crud-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .action-buttons button {
+      flex: 1;
+      margin: 0 0.25rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .action-buttons button#create-btn { background-color: #28a745; color: #fff; }
+    .action-buttons button#read-btn  { background-color: #17a2b8; color: #fff; }
+    .action-buttons button#update-btn { background-color: #ffc107; color: #222; }
+    .action-buttons button#delete-btn { background-color: #dc3545; color: #fff; }
+    .action-buttons button:hover {
+      opacity: 0.9;
+    }
+    .data-display {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-title">
+      <h1>CRUD Operations (Cloud)</h1>
+      <button id="theme-toggle" aria-label="Toggle light/dark mode">🌞</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="crud.html">CRUD</a></li>
+        <!-- Add other navigation links as needed -->
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="crud-container">
+    <h2>Manage Your Data on JSONBin</h2>
+    <form id="crud-form">
+      <div>
+        <label for="data-id">ID:</label>
+        <input type="text" id="data-id" name="dataId" placeholder="Enter a unique ID" required>
+      </div>
+      <div>
+        <label for="data-value">Value:</label>
+        <textarea id="data-value" name="dataValue" placeholder="Enter your data here" required></textarea>
+      </div>
+      <div class="action-buttons">
+        <button type="button" id="create-btn">Create</button>
+        <button type="button" id="read-btn">Read</button>
+        <button type="button" id="update-btn">Update</button>
+        <button type="button" id="delete-btn">Delete</button>
+      </div>
+    </form>
+    
+    <div class="data-display" id="data-display">
+      <!-- Dynamically displayed data will appear here -->
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Rushil</p>
+  </footer>
+  
+  <script>
+    // Replace these with your actual JSONBin API key and Bin ID
+    const API_KEY = '$2a$10$yWnFnN6/JYQBUGzy6FKfP.0O0afkxp3DeoMR57Q7LreKPkl6Z9PQW';
+    const BIN_ID = '67d7538b8a456b7966772282';
+    const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+
+    const dataDisplay = document.getElementById('data-display');
+    const createBtn = document.getElementById('create-btn');
+    const readBtn = document.getElementById('read-btn');
+    const updateBtn = document.getElementById('update-btn');
+    const deleteBtn = document.getElementById('delete-btn');
+
+    // Helper: Fetch the entire bin data from JSONBin
+    async function fetchBinData() {
+      try {
+        const response = await fetch(JSONBIN_URL, {
+          method: 'GET',
+          headers: {
+            'X-Master-Key': API_KEY,
+            'Content-Type': 'application/json'
+          }
+        });
+        const result = await response.json();
+        return result.record || {}; // assuming record holds your data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        alert('Error fetching data from JSONBin.');
+      }
+    }
+
+    // Helper: Update the bin data on JSONBin
+    async function updateBinData(newData) {
+      try {
+        const response = await fetch(JSONBIN_URL, {
+          method: 'PUT',
+          headers: {
+            'X-Master-Key': API_KEY,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newData)
+        });
+        return await response.json();
+      } catch (error) {
+        console.error('Error updating data:', error);
+        alert('Error updating data on JSONBin.');
+      }
+    }
+
+    // Helper: Display bin data in the data display section
+    async function displayData() {
+      const binData = await fetchBinData();
+      let output = '<h3>Stored Data:</h3>';
+      const keys = Object.keys(binData);
+      if (keys.length === 0) {
+        output += '<p>No data found.</p>';
+      } else {
+        output += '<ul>';
+        keys.forEach(key => {
+          output += `<li><strong>${key}:</strong> ${binData[key]}</li>`;
+        });
+        output += '</ul>';
+      }
+      dataDisplay.innerHTML = output;
+    }
+
+    // Create
+    createBtn.addEventListener('click', async () => {
+      const id = document.getElementById('data-id').value.trim();
+      const value = document.getElementById('data-value').value.trim();
+      if (id && value) {
+        const binData = await fetchBinData();
+        if (binData[id]) {
+          alert('Item already exists. Use Update to modify it.');
+        } else {
+          binData[id] = value;
+          await updateBinData(binData);
+          alert('Item created successfully.');
+          displayData();
+        }
+      } else {
+        alert('Please fill in both fields.');
+      }
+    });
+
+    // Read
+    readBtn.addEventListener('click', async () => {
+      const id = document.getElementById('data-id').value.trim();
+      const binData = await fetchBinData();
+      if (id) {
+        if (binData[id]) {
+          document.getElementById('data-value').value = binData[id];
+          alert('Data loaded.');
+        } else {
+          alert('No data found with that ID.');
+        }
+      } else {
+        // If no ID is specified, display all stored data
+        displayData();
+      }
+    });
+
+    // Update
+    updateBtn.addEventListener('click', async () => {
+      const id = document.getElementById('data-id').value.trim();
+      const value = document.getElementById('data-value').value.trim();
+      if (id && value) {
+        const binData = await fetchBinData();
+        if (binData[id]) {
+          binData[id] = value;
+          await updateBinData(binData);
+          alert('Item updated successfully.');
+          displayData();
+        } else {
+          alert('No item found with that ID to update.');
+        }
+      } else {
+        alert('Please fill in both fields.');
+      }
+    });
+
+    // Delete
+    deleteBtn.addEventListener('click', async () => {
+      const id = document.getElementById('data-id').value.trim();
+      if (id) {
+        const binData = await fetchBinData();
+        if (binData[id]) {
+          delete binData[id];
+          await updateBinData(binData);
+          alert('Item deleted successfully.');
+          displayData();
+        } else {
+          alert('No item found with that ID.');
+        }
+      } else {
+        alert('Please provide an ID to delete.');
+      }
+    });
+
+    // Initial display of stored data on page load
+    displayData();
+  </script>
+</body>
+</html>
