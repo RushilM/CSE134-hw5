@@ -742,19 +742,21 @@ header {
 /* Back to Top Button Styling */
 #back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     background-color: var(--primary-color, #007bff);
     color: #fff;
-    border: none;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px; /* Pill-shaped */
     font-size: 1rem;
+    cursor: pointer;
     display: none; /* Hidden by default */
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #back-to-top:hover {
     background-color: var(--secondary-color, #1e90ff);
+    transform: scale(1.1);
 }
